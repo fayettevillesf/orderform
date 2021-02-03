@@ -1,0 +1,281 @@
+
+
+    <h1>Online Ordering - {{ .Params.title }}</h1>
+<div id="intro" style="font-size: small;">
+    {{ .Content }}
+</div>
+    <div id="orderform">
+	   <form name="online-order" netlify-honeypot="bf" method="post" action="/thankyou.html" netlify subject="sweetFrog Order">
+		   <p style="color:red;">
+  <strong>All fields are required</strong>.
+</p>
+
+<p>
+	<label>Your name</label>
+	<input type="text" name="NAME" placeholder="Your name" size="24" maxlength="20" required />
+</p>
+<p>
+	<label>Your email</label>
+	<input type="email" name="EMAIL" placeholder="Your email" size="40" maxlength="40" required />
+</p>
+
+<p>
+	<label for="take-out-TELEPHONE_NUMBER">Telephone number</label>
+	<input type="text" name="TELEPHONE_NUMBER" placeholder="Telephone number" required="" id="take-out-TELEPHONE_NUMBER">
+</p>
+<p>
+<label for="num_cups">How many yogurt cups are you ordering?</label>
+  <select name="num_cups" required="" id="num_cups" onchange="showCups()"><option> </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+</p>
+<p>
+  &nbsp;
+</p>
+<div id="1" style="border:1px solid black;padding:8px; margin-bottom: 1em; display: none;">
+
+<p>
+  <strong><ul>Cup #1 </ul></strong>
+  </p>
+
+<p>
+	<label for="SIZE_YOGURT_CUP_1">Select the size of yogurt cup #1:</label><br/>
+  <label><select name="SIZE_YOGURT_CUP_1"><option value="">...</option><option value="Kids (8 oz) - $4.25 + tax">Kids (8 oz) - $4.25 + tax</option><option id="smallCup1" value="Small (12 oz) - $5.75 + tax">Small (12 oz) - $5.75 + tax</option> <option value="Medium (16 oz) - $7.50 + tax">Medium (16 oz) - $7.50 + tax</option> <option  value="Large (24 oz) - $9.50 + tax">Large (24 oz) - $9.50 + tax</option>
+      </select>
+</p>
+<p>
+	<label for="FLAVORS_OF_YOGURT_CUP_1">Select the flavors of yogurt, ice cream, etc., for cup #1 (choose up to 3 by holding Ctrl/Cmd):</label><br/>
+	<label><select multiple="multiple" name="FLAVORS_OF_YOGURT_CUP_1[]"><option value="Cookies and Cream">Cookies and Cream</option><option value="Orchard Cherry">Orchard Cherry</option><option value="Cake Batter">Cake Batter</option><option value="Toasted Marshmallow">Toasted Marshmallow</option><option value="NSA Cheescake">NSA Cheescake</option><option value="NSA Praline">NSA Praline</option><option value="Peanut Butter">Peanut Butter</option><option value="Chocolate">Chocolate</option><option value="Vanilla">Vanilla</option><option value="Mango Tango (Non-Dairy)">Mango Tango (Non-Dairy)</option><option value="Dole Strawberry (Non-Dairy)">Dole Strawberry (Non-Dairy)</option><option value="Dole Orange (Non-Dairy)">Dole Orange (Non-Dairy)</option> <option value="Vanilla Ice Cream">Vanilla Ice Cream</option><option value="Chocolate Ice Cream">Chocolate Ice Cream</option><option value="Cold Brew Gelato">Cold Brew Gelato</option><option value="Original Tart">Original Tart</option>
+      </select>
+</p>
+<p>
+	<label for="TOPPINGS_CUP_1">Select your toppings for cup #1 (choose up to four)</label><br/>
+  <label><select multiple="multiple" name="TOPPINGS_CUP_1[]" >
+    <option value="Sour Gummy Worms">Sour Gummy Worms</option><option value="Gummy Bears">Gummy Bears</option><option value="Strawberry Juice Poppers">Strawberry Juice Poppers</option><option value="Cheesecake Bites">Cheesecake Bites</option><option value="Oreos">Oreos</option><option value="Peanuts">Peanuts</option><option value="Rainbow Sprinkles">Rainbow Sprinkles</option><option value="Chocolate Sprinkles">Chocolate Sprinkles</option><option value="Granola">Granola</option><option value="Hot Fudge">Hot Fudge</option><option value="Caramel">Caramel</option><option value="Marshmallow Cream">Marshmallow Cream</option><option value="Nutella">Nutella</option><option value="Peanut Butter Sauce">Peanut Butter Sauce</option><option value="Cookie Dough Bites">Cookie Dough Bites</option><option value="M&amp;M's">M&amp;M's</option><option value="Reeses Pieces">Reeses Pieces</option>
+    </select>
+</p>
+<span style="display:none;"><label>Not here</label><input name="bf"></span>
+</div>
+
+<div id="2" style="border:1px solid black;padding:8px; margin-bottom: 1em; display: none;">
+<p>
+  <strong><ul>Cup #2 </ul></strong>
+  </p>
+
+<p>
+	<label for="SIZE_YOGURT_CUP_2">Select the size of yogurt cup #2:</label><br/>
+  <label><select name="SIZE_YOGURT_CUP_2"><option value="">...</option><option value="Kids (8 oz) - $4.25 + tax">Kids (8 oz) - $4.25 + tax</option><option id="smallCup2" value="Small (12 oz) - $5.75 + tax">Small (12 oz) - $5.75 + tax</option> <option value="Medium (16 oz) - $7.50 + tax">Medium (16 oz) - $7.50 + tax</option> <option  value="Large (24 oz) - $9.50 + tax">Large (24 oz) - $9.50 + tax</option>
+      </select>
+</p>
+<p>
+	<label for="FLAVORS_OF_YOGURT_CUP_2">Select the flavors of yogurt, ice cream, etc., for cup #2 (choose up to 3 by holding Ctrl/Cmd):</label><br/>
+	<label><select multiple="multiple" name="FLAVORS_OF_YOGURT_CUP_2[]"><option value="Cookies and Cream">Cookies and Cream</option><option value="Orchard Cherry">Orchard Cherry</option><option value="Cake Batter">Cake Batter</option><option value="Toasted Marshmallow">Toasted Marshmallow</option><option value="NSA Cheescake">NSA Cheescake</option><option value="NSA Praline">NSA Praline</option><option value="Peanut Butter">Peanut Butter</option><option value="Chocolate">Chocolate</option><option value="Vanilla">Vanilla</option><option value="Mango Tango (Non-Dairy)">Mango Tango (Non-Dairy)</option><option value="Dole Strawberry (Non-Dairy)">Dole Strawberry (Non-Dairy)</option><option value="Dole Orange (Non-Dairy)">Dole Orange (Non-Dairy)</option> <option value="Vanilla Ice Cream">Vanilla Ice Cream</option><option value="Chocolate Ice Cream">Chocolate Ice Cream</option><option value="Cold Brew Gelato">Cold Brew Gelato</option><option value="Original Tart">Original Tart</option>
+      </select>
+</p>
+<p>
+	<label for="TOPPINGS_CUP_2">Select your toppings for cup #2 (choose up to four)</label><br/>
+  <label><select multiple="multiple" name="TOPPINGS_CUP_2[]" >
+    <option value="Sour Gummy Worms">Sour Gummy Worms</option><option value="Gummy Bears">Gummy Bears</option><option value="Strawberry Juice Poppers">Strawberry Juice Poppers</option><option value="Cheesecake Bites">Cheesecake Bites</option><option value="Oreos">Oreos</option><option value="Peanuts">Peanuts</option><option value="Rainbow Sprinkles">Rainbow Sprinkles</option><option value="Chocolate Sprinkles">Chocolate Sprinkles</option><option value="Granola">Granola</option><option value="Hot Fudge">Hot Fudge</option><option value="Caramel">Caramel</option><option value="Marshmallow Cream">Marshmallow Cream</option><option value="Nutella">Nutella</option><option value="Peanut Butter Sauce">Peanut Butter Sauce</option><option value="Cookie Dough Bites">Cookie Dough Bites</option><option value="M&amp;M's">M&amp;M's</option><option value="Reeses Pieces">Reeses Pieces</option>
+    </select>
+</p>
+
+</div>
+
+<div id="3" style="border:1px solid black;padding:8px; margin-bottom: 1em; display: none;">
+
+<p>
+  <strong><ul>Cup #3 </ul></strong>
+  </p>
+
+<p>
+	<label for="SIZE_YOGURT_CUP_3">Select the size of yogurt cup #3:</label><br/>
+  <label><select name="SIZE_YOGURT_CUP_3[]"><option value="">...</option><option value="Kids (8 oz) - $4.25 + tax">Kids (8 oz) - $4.25 + tax</option><option id="smallCup3" value="Small (12 oz) - $5.75 + tax">Small (12 oz) - $5.75 + tax</option> <option value="Medium (16 oz) - $7.50 + tax">Medium (16 oz) - $7.50 + tax</option> <option  value="Large (24 oz) - $9.50 + tax">Large (24 oz) - $9.50 + tax</option>
+      </select>
+</p>
+<p>
+	<label for="FLAVORS_OF_YOGURT_CUP_3">Select the flavors of yogurt, ice cream, etc., for cup #3 (choose up to 3 by holding Ctrl/Cmd):</label><br/>
+	<label><select multiple="multiple" name="FLAVORS_OF_YOGURT_CUP_3[]"><option value="Cookies and Cream">Cookies and Cream</option><option value="Orchard Cherry">Orchard Cherry</option><option value="Cake Batter">Cake Batter</option><option value="Toasted Marshmallow">Toasted Marshmallow</option><option value="NSA Cheescake">NSA Cheescake</option><option value="NSA Praline">NSA Praline</option><option value="Peanut Butter">Peanut Butter</option><option value="Chocolate">Chocolate</option><option value="Vanilla">Vanilla</option><option value="Mango Tango (Non-Dairy)">Mango Tango (Non-Dairy)</option><option value="Dole Strawberry (Non-Dairy)">Dole Strawberry (Non-Dairy)</option><option value="Dole Orange (Non-Dairy)">Dole Orange (Non-Dairy)</option> <option value="Vanilla Ice Cream">Vanilla Ice Cream</option><option value="Chocolate Ice Cream">Chocolate Ice Cream</option><option value="Cold Brew Gelato">Cold Brew Gelato</option><option value="Original Tart">Original Tart</option>
+      </select>
+</p>
+<p>
+	<label for="TOPPINGS_CUP_3">Select your toppings for cup #3 (choose up to four)</label><br/>
+  <label><select multiple="multiple" name="TOPPINGS_CUP_3[]" >
+    <option value="Sour Gummy Worms">Sour Gummy Worms</option><option value="Gummy Bears">Gummy Bears</option><option value="Strawberry Juice Poppers">Strawberry Juice Poppers</option><option value="Cheesecake Bites">Cheesecake Bites</option><option value="Oreos">Oreos</option><option value="Peanuts">Peanuts</option><option value="Rainbow Sprinkles">Rainbow Sprinkles</option><option value="Chocolate Sprinkles">Chocolate Sprinkles</option><option value="Granola">Granola</option><option value="Hot Fudge">Hot Fudge</option><option value="Caramel">Caramel</option><option value="Marshmallow Cream">Marshmallow Cream</option><option value="Nutella">Nutella</option><option value="Peanut Butter Sauce">Peanut Butter Sauce</option><option value="Cookie Dough Bites">Cookie Dough Bites</option><option value="M&amp;M's">M&amp;M's</option><option value="Reeses Pieces">Reeses Pieces</option>
+    </select>
+</p>
+
+</div>
+
+<div id="4" style="border:1px solid black;padding:8px; margin-bottom: 1em; display: none;">
+
+<p>
+  <strong><ul>Cup #4 </ul></strong>
+  </p>
+
+<p>
+	<label for="SIZE_YOGURT_CUP_4">Select the size of yogurt cup #4:</label><br/>
+  <label><select name="SIZE_YOGURT_CUP_4"><option value="">...</option><option value="Kids (8 oz) - $4.25 + tax">Kids (8 oz) - $4.25 + tax</option><option id="smallCup4" value="Small (12 oz) - $5.75 + tax">Small (12 oz) - $5.75 + tax</option> <option value="Medium (16 oz) - $7.50 + tax">Medium (16 oz) - $7.50 + tax</option> <option  value="Large (24 oz) - $9.50 + tax">Large (24 oz) - $9.50 + tax</option>
+      </select>
+</p>
+<p>
+	<label for="FLAVORS_OF_YOGURT_CUP_4">Select the flavors of yogurt, ice cream, etc., for cup #4 (choose up to 3 by holding Ctrl/Cmd):</label><br/>
+	<label><select multiple="multiple" name="FLAVORS_OF_YOGURT_CUP_4[]"><option value="Cookies and Cream">Cookies and Cream</option><option value="Orchard Cherry">Orchard Cherry</option><option value="Cake Batter">Cake Batter</option><option value="Toasted Marshmallow">Toasted Marshmallow</option><option value="NSA Cheescake">NSA Cheescake</option><option value="NSA Praline">NSA Praline</option><option value="Peanut Butter">Peanut Butter</option><option value="Chocolate">Chocolate</option><option value="Vanilla">Vanilla</option><option value="Mango Tango (Non-Dairy)">Mango Tango (Non-Dairy)</option><option value="Dole Strawberry (Non-Dairy)">Dole Strawberry (Non-Dairy)</option><option value="Dole Orange (Non-Dairy)">Dole Orange (Non-Dairy)</option> <option value="Vanilla Ice Cream">Vanilla Ice Cream</option><option value="Chocolate Ice Cream">Chocolate Ice Cream</option><option value="Cold Brew Gelato">Cold Brew Gelato</option><option value="Original Tart">Original Tart</option>
+      </select>
+</p>
+<p>
+	<label for="TOPPINGS_CUP_4">Select your toppings for cup #4 (choose up to four)</label><br/>
+  <label><select multiple="multiple" name="TOPPINGS_CUP_4[]" >
+    <option value="Sour Gummy Worms">Sour Gummy Worms</option><option value="Gummy Bears">Gummy Bears</option><option value="Strawberry Juice Poppers">Strawberry Juice Poppers</option><option value="Cheesecake Bites">Cheesecake Bites</option><option value="Oreos">Oreos</option><option value="Peanuts">Peanuts</option><option value="Rainbow Sprinkles">Rainbow Sprinkles</option><option value="Chocolate Sprinkles">Chocolate Sprinkles</option><option value="Granola">Granola</option><option value="Hot Fudge">Hot Fudge</option><option value="Caramel">Caramel</option><option value="Marshmallow Cream">Marshmallow Cream</option><option value="Nutella">Nutella</option><option value="Peanut Butter Sauce">Peanut Butter Sauce</option><option value="Cookie Dough Bites">Cookie Dough Bites</option><option value="M&amp;M's">M&amp;M's</option><option value="Reeses Pieces">Reeses Pieces</option>
+    </select>
+</p>
+
+</div>
+
+<div id="5" style="border:1px solid black;padding:8px; margin-bottom: 1em; display: none;">
+
+<p>
+  <strong><ul>Cup #5 </ul></strong>
+  </p>
+
+<p>
+  <label for="SIZE_YOGURT_CUP_5">Select the size of yogurt cup #5:</label><br/>
+  <label><select name="SIZE_YOGURT_CUP_5"><option value="">...</option><option value="Kids (8 oz) - $4.25 + tax">Kids (8 oz) - $4.25 + tax</option><option  id="smallCup5" value="Small (12 oz) - $5.75 + tax">Small (12 oz) - $5.75 + tax</option> <option value="Medium (16 oz) - $7.50 + tax">Medium (16 oz) - $7.50 + tax</option> <option  value="Large (24 oz) - $9.50 + tax">Large (24 oz) - $9.50 + tax</option>
+      </select>
+</p>
+<p>
+  <label for="FLAVORS_OF_YOGURT_CUP_5">Select the flavors of yogurt, ice cream, etc., for cup #5 (choose up to 3 by holding Ctrl/Cmd):</label><br/>
+  <label><select multiple="multiple" name="FLAVORS_OF_YOGURT_CUP_5[]"><option value="Cookies and Cream">Cookies and Cream</option><option value="Orchard Cherry">Orchard Cherry</option><option value="Cake Batter">Cake Batter</option><option value="Toasted Marshmallow">Toasted Marshmallow</option><option value="NSA Cheescake">NSA Cheescake</option><option value="NSA Praline">NSA Praline</option><option value="Peanut Butter">Peanut Butter</option><option value="Chocolate">Chocolate</option><option value="Vanilla">Vanilla</option><option value="Mango Tango (Non-Dairy)">Mango Tango (Non-Dairy)</option><option value="Dole Strawberry (Non-Dairy)">Dole Strawberry (Non-Dairy)</option><option value="Dole Orange (Non-Dairy)">Dole Orange (Non-Dairy)</option> <option value="Vanilla Ice Cream">Vanilla Ice Cream</option><option value="Chocolate Ice Cream">Chocolate Ice Cream</option><option value="Cold Brew Gelato">Cold Brew Gelato</option><option value="Original Tart">Original Tart</option>
+      </select>
+</p>
+<p>
+  <label for="TOPPINGS_CUP_5">Select your toppings for cup #5 (choose up to four)</label><br/>
+  <label><select multiple="multiple" name="TOPPINGS_CUP_5[]" >
+    <option value="Sour Gummy Worms">Sour Gummy Worms</option><option value="Gummy Bears">Gummy Bears</option><option value="Strawberry Juice Poppers">Strawberry Juice Poppers</option><option value="Cheesecake Bites">Cheesecake Bites</option><option value="Oreos">Oreos</option><option value="Peanuts">Peanuts</option><option value="Rainbow Sprinkles">Rainbow Sprinkles</option><option value="Chocolate Sprinkles">Chocolate Sprinkles</option><option value="Granola">Granola</option><option value="Hot Fudge">Hot Fudge</option><option value="Caramel">Caramel</option><option value="Marshmallow Cream">Marshmallow Cream</option><option value="Nutella">Nutella</option><option value="Peanut Butter Sauce">Peanut Butter Sauce</option><option value="Cookie Dough Bites">Cookie Dough Bites</option><option value="M&amp;M's">M&amp;M's</option><option value="Reeses Pieces">Reeses Pieces</option>
+    </select>
+</p>
+
+</div>
+
+<div id="6" style="border:1px solid black;padding:8px; margin-bottom: 1em; display: none;">
+
+<p>
+  <strong><ul>Cup #6 </ul></strong>
+  </p>
+
+<p>
+  <label for="SIZE_YOGURT_CUP_6">Select the size of yogurt cup #6:</label><br/>
+  <label><select name="SIZE_YOGURT_CUP_6"><option value="">...</option><option value="Kids (8 oz) - $4.25 + tax">Kids (8 oz) - $4.25 + tax</option><option id="smallCup6" value="Small (12 oz) - $5.75 + tax">Small (12 oz) - $5.75 + tax</option> <option value="Medium (16 oz) - $7.50 + tax">Medium (16 oz) - $7.50 + tax</option> <option  value="Large (24 oz) - $9.50 + tax">Large (24 oz) - $9.50 + tax</option>
+      </select>
+</p>
+<p>
+  <label for="FLAVORS_OF_YOGURT_CUP_6">Select the flavors of yogurt, ice cream, etc., for cup #6 (choose up to 3 by holding Ctrl/Cmd):</label><br/>
+  <label><select multiple="multiple" name="FLAVORS_OF_YOGURT_CUP_6[]"><option value="Cookies and Cream">Cookies and Cream</option><option value="Orchard Cherry">Orchard Cherry</option><option value="Cake Batter">Cake Batter</option><option value="Toasted Marshmallow">Toasted Marshmallow</option><option value="NSA Cheescake">NSA Cheescake</option><option value="NSA Praline">NSA Praline</option><option value="Peanut Butter">Peanut Butter</option><option value="Chocolate">Chocolate</option><option value="Vanilla">Vanilla</option><option value="Mango Tango (Non-Dairy)">Mango Tango (Non-Dairy)</option><option value="Dole Strawberry (Non-Dairy)">Dole Strawberry (Non-Dairy)</option><option value="Dole Orange (Non-Dairy)">Dole Orange (Non-Dairy)</option> <option value="Vanilla Ice Cream">Vanilla Ice Cream</option><option value="Chocolate Ice Cream">Chocolate Ice Cream</option><option value="Cold Brew Gelato">Cold Brew Gelato</option><option value="Original Tart">Original Tart</option>
+      </select>
+</p>
+<p>
+  <label for="TOPPINGS_CUP_6">Select your toppings for cup #6 (choose up to four)</label><br/>
+  <label><select multiple="multiple" name="TOPPINGS_CUP_6[]" >
+    <option value="Sour Gummy Worms">Sour Gummy Worms</option><option value="Gummy Bears">Gummy Bears</option><option value="Strawberry Juice Poppers">Strawberry Juice Poppers</option><option value="Cheesecake Bites">Cheesecake Bites</option><option value="Oreos">Oreos</option><option value="Peanuts">Peanuts</option><option value="Rainbow Sprinkles">Rainbow Sprinkles</option><option value="Chocolate Sprinkles">Chocolate Sprinkles</option><option value="Granola">Granola</option><option value="Hot Fudge">Hot Fudge</option><option value="Caramel">Caramel</option><option value="Marshmallow Cream">Marshmallow Cream</option><option value="Nutella">Nutella</option><option value="Peanut Butter Sauce">Peanut Butter Sauce</option><option value="Cookie Dough Bites">Cookie Dough Bites</option><option value="M&amp;M's">M&amp;M's</option><option value="Reeses Pieces">Reeses Pieces</option>
+    </select>
+</p>
+
+</div>
+
+<div id="7" style="border:1px solid black;padding:8px; margin-bottom: 1em; display: none;">
+
+<p>
+  <strong><ul>Cup #7 </ul></strong>
+  </p>
+
+<p>
+  <label for="SIZE_YOGURT_CUP_7">Select the size of yogurt cup #7:</label><br/>
+  <label><select name="SIZE_YOGURT_CUP_7"><option value="">...</option><option value="Kids (8 oz) - $4.25 + tax">Kids (8 oz) - $4.25 + tax</option><option id="smallCup7" value="Small (12 oz) - $5.75 + tax">Small (12 oz) - $5.75 + tax</option> <option value="Medium (16 oz) - $7.50 + tax">Medium (16 oz) - $7.50 + tax</option> <option  value="Large (24 oz) - $9.50 + tax">Large (24 oz) - $9.50 + tax</option>
+      </select>
+</p>
+<p>
+  <label for="FLAVORS_OF_YOGURT_CUP_7">Select the flavors of yogurt, ice cream, etc., for cup #7 (choose up to 3 by holding Ctrl/Cmd):</label><br/>
+  <label><select multiple="multiple" name="FLAVORS_OF_YOGURT_CUP_7[]"><option value="Cookies and Cream">Cookies and Cream</option><option value="Orchard Cherry">Orchard Cherry</option><option value="Cake Batter">Cake Batter</option><option value="Toasted Marshmallow">Toasted Marshmallow</option><option value="NSA Cheescake">NSA Cheescake</option><option value="NSA Praline">NSA Praline</option><option value="Peanut Butter">Peanut Butter</option><option value="Chocolate">Chocolate</option><option value="Vanilla">Vanilla</option><option value="Mango Tango (Non-Dairy)">Mango Tango (Non-Dairy)</option><option value="Dole Strawberry (Non-Dairy)">Dole Strawberry (Non-Dairy)</option><option value="Dole Orange (Non-Dairy)">Dole Orange (Non-Dairy)</option> <option value="Vanilla Ice Cream">Vanilla Ice Cream</option><option value="Chocolate Ice Cream">Chocolate Ice Cream</option><option value="Cold Brew Gelato">Cold Brew Gelato</option><option value="Original Tart">Original Tart</option>
+      </select>
+</p>
+<p>
+  <label for="TOPPINGS_CUP_7">Select your toppings for cup #7 (choose up to four)</label><br/>
+  <label><select multiple="multiple" name="TOPPINGS_CUP_7[]" >
+    <option value="Sour Gummy Worms">Sour Gummy Worms</option><option value="Gummy Bears">Gummy Bears</option><option value="Strawberry Juice Poppers">Strawberry Juice Poppers</option><option value="Cheesecake Bites">Cheesecake Bites</option><option value="Oreos">Oreos</option><option value="Peanuts">Peanuts</option><option value="Rainbow Sprinkles">Rainbow Sprinkles</option><option value="Chocolate Sprinkles">Chocolate Sprinkles</option><option value="Granola">Granola</option><option value="Hot Fudge">Hot Fudge</option><option value="Caramel">Caramel</option><option value="Marshmallow Cream">Marshmallow Cream</option><option value="Nutella">Nutella</option><option value="Peanut Butter Sauce">Peanut Butter Sauce</option><option value="Cookie Dough Bites">Cookie Dough Bites</option><option value="M&amp;M's">M&amp;M's</option><option value="Reeses Pieces">Reeses Pieces</option>
+    </select>
+</p>
+
+</div>
+
+<div id="8" style="border:1px solid black;padding:8px; margin-bottom: 1em; display: none;">
+
+<p>
+  <strong><ul>Cup #8 </ul></strong>
+  </p>
+
+<p>
+  <label for="SIZE_YOGURT_CUP_8">Select the size of yogurt cup #8:</label><br/>
+  <label><select name="SIZE_YOGURT_CUP_8"><option value="">...</option><option value="Kids (8 oz) - $4.25 + tax">Kids (8 oz) - $4.25 + tax</option><option id="smallCup8" value="Small (12 oz) - $5.75 + tax">Small (12 oz) - $5.75 + tax</option> <option value="Medium (16 oz) - $7.50 + tax">Medium (16 oz) - $7.50 + tax</option> <option  value="Large (24 oz) - $9.50 + tax">Large (24 oz) - $9.50 + tax</option>
+      </select>
+</p>
+<p>
+  <label for="FLAVORS_OF_YOGURT_CUP_8">Select the flavors of yogurt, ice cream, etc., for cup #8 (choose up to 3 by holding Ctrl/Cmd):</label><br/>
+  <label><select multiple="multiple" name="FLAVORS_OF_YOGURT_CUP_8[]"><option value="Cookies and Cream">Cookies and Cream</option><option value="Orchard Cherry">Orchard Cherry</option><option value="Cake Batter">Cake Batter</option><option value="Toasted Marshmallow">Toasted Marshmallow</option><option value="NSA Cheescake">NSA Cheescake</option><option value="NSA Praline">NSA Praline</option><option value="Peanut Butter">Peanut Butter</option><option value="Chocolate">Chocolate</option><option value="Vanilla">Vanilla</option><option value="Mango Tango (Non-Dairy)">Mango Tango (Non-Dairy)</option><option value="Dole Strawberry (Non-Dairy)">Dole Strawberry (Non-Dairy)</option><option value="Dole Orange (Non-Dairy)">Dole Orange (Non-Dairy)</option> <option value="Vanilla Ice Cream">Vanilla Ice Cream</option><option value="Chocolate Ice Cream">Chocolate Ice Cream</option><option value="Cold Brew Gelato">Cold Brew Gelato</option><option value="Original Tart">Original Tart</option>
+      </select>
+</p>
+<p>
+  <label for="TOPPINGS_CUP_8">Select your toppings for cup #8 (choose up to four)</label><br/>
+  <label><select multiple="multiple" name="TOPPINGS_CUP_8[]" >
+    <option value="Sour Gummy Worms">Sour Gummy Worms</option><option value="Gummy Bears">Gummy Bears</option><option value="Strawberry Juice Poppers">Strawberry Juice Poppers</option><option value="Cheesecake Bites">Cheesecake Bites</option><option value="Oreos">Oreos</option><option value="Peanuts">Peanuts</option><option value="Rainbow Sprinkles">Rainbow Sprinkles</option><option value="Chocolate Sprinkles">Chocolate Sprinkles</option><option value="Granola">Granola</option><option value="Hot Fudge">Hot Fudge</option><option value="Caramel">Caramel</option><option value="Marshmallow Cream">Marshmallow Cream</option><option value="Nutella">Nutella</option><option value="Peanut Butter Sauce">Peanut Butter Sauce</option><option value="Cookie Dough Bites">Cookie Dough Bites</option><option value="M&amp;M's">M&amp;M's</option><option value="Reeses Pieces">Reeses Pieces</option>
+    </select>
+</p>
+
+</div>
+
+<p><label for="Using_Gift_Card">Gift Card: </label><br/>If you are using a gift card, please check the box and provide the gift card number. If you provide the gift card number, we will charge the gift card first, and if it is not enough to cover your order, we will charge the credit card for the difference. 
+  <input type=checkbox name="Using_Gift_Card" id="Using_Gift_Card" onchange="showGC()"></input>
+</p>
+<div id="GCnum" style="display: none;"><label for="GCnumber">Gift Card Number: </label><input type='text' name='GCnumber' id="GCnumber"></div>
+<p>
+  &nbsp;
+</p>
+<p>
+	<label>Additional Instructions</label>
+	<textarea name="MESSAGE" placeholder="Any additional information goes here." ></textarea>
+</p>
+
+    <input type="hidden" name="ORDERNUM" id="ORDERNUM" value=''>
+<p>
+	<label for="take-out-menu-NAME_ON_CREDIT_CARD">Name on Credit Card</label>
+	<input type="text" name="NAME_ON_CREDIT_CARD" placeholder="Exactly as name appears on card" id="take-out-menu-NAME_ON_CREDIT_CARD" required>
+</p>
+<p>
+	<label for="take-out-menu-BILLING_ZIP_CODE">Billing Zip Code</label>
+	<input type="text" name="BILLING_ZIP_CODE" placeholder="5-digits" id="take-out-menu-BILLING_ZIP_CODE" required>
+</p>
+
+<p>
+	<label for="ccnum">Credit card number</label>
+	<input type="text" name="ccnum" required id="ccnum" size="24" maxlength="20" placeholder="1234 5678 9012 3456">
+  <span id="ccError" style="display: none; color: red; font-weight: bold;">Not a valid card number! Please try again.</span>
+  </p>
+<p>
+	<label for="ccCVV">CVV</label>
+	<input type="text" name="ccCVV" id="ccCVV" size="6" maxlength="4" required placeholder="789">
+  <span id="cvvError" style="display: none; color: red; font-weight: bold;">Not a valid security code! Please try again.</span>
+</p>
+<p>
+  <label for="ccexp">Expiration (MM/YYYY)</label>
+  <input type="text" name="ccexp" id="ccexp" size="8" maxlength="9" required placeholder="MM/YYYY">
+  <span id="expError" style="display: none; color: red; font-weight: bold;">Not a valid expiration date! Please try again.</span>
+</p>
+<p>
+<strong>Once you press submit</strong>, if you don't see information below, thanking you for your order, <strong>YOUR ORDER IS NOT COMPLETE </strong>. Please check it for missing information and submit it again.
+</p>
+<p style="font-size:small;">
+  By submitting this order you authorize sweetFrog Fayetteville, NY to charge your card above for the amount reflected in this order, plus NY Sales Tax.
+</p>
+<p>
+	<button type="submit" disabled >Submit</button><br/>
+</p>
+           </form>
+
+
+</div>

@@ -1,0 +1,19 @@
+{{ define "main" }}
+<style>
+  #container nav {
+    border:0px;
+  }
+  .image, figure img, img {
+    box-shadow: 0 0px 0px #fff;
+  }
+</style>
+
+    {{ if (eq .Params.order true) }}
+      {{ partial "order" . }}
+      {{ partial "order_footer" . }}
+    {{ else }}
+      {{ partial "article" . }}
+      {{ partial "single_footer" . }}
+    {{ end }}
+
+{{ end }}
