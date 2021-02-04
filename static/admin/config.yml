@@ -11,6 +11,6 @@ collections:
   - name: "pages" # Used in routes, e.g., /admin/collections/blog
     label: "pages" # Used in the UI
     files:
-            label: "sweetFrog Fayetteville Towne Center, NY"
+          - label: "sweetFrog Fayetteville Towne Center, NY"
             file: "site/content/index.md"
             fields:
