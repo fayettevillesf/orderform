@@ -7,3 +7,10 @@ backend:
 # These two lines are needed for Hugo sites
 media_folder: "static/images" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
+collections:
+  - name: "pages" # Used in routes, e.g., /admin/collections/blog
+    label: "pages" # Used in the UI
+    files:
+            label: "sweetFrog Fayetteville Towne Center, NY"
+            file: "site/content/index.md"
+            fields:
