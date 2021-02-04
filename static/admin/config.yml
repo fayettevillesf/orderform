@@ -5,5 +5,5 @@ backend:
 #publish_mode: editorial_workflow
 # This line should *not* be indented -- needed if users are allowed to upload images - set to images directory
 # These two lines are needed for Hugo sites
-#media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
-#public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+media_folder: "static/images" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
