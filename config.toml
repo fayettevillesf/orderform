@@ -1,7 +1,7 @@
 baseurl = "https://fayettevillesf.netlify.app/"
 title = "Fayetteville sweetFrog"
 copyright = "Copyright &copy; 2021 - Fayetteville sweetFrog"
-canonifyurls = true
+# canonifyurls = true
 theme = "hugo-kiera"
 
 paginate = 3
