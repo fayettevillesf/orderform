@@ -12,5 +12,5 @@ collections:
     label: "pages" # Used in the UI
     files:
           - label: "sweetFrog Fayetteville Towne Center, NY"
+            name: "index"
             file: "site/content/index.md"
-            fields:
