@@ -6,18 +6,49 @@
  // ajax to make correct number of cups appear in form
 
 function showCups() {
+  
      var cups = document.getElementById("num_cups").value;
+     var j;
+     var priceText;
+     var priceOpts1 = '<option value="';
+     var priceOpts2 = '">';
+     var priceOpts3 = '</option>';
   if(cups > 0){
     for (var i = 0; i < cups; i++)
     {
-      var j = i + 1;
+      j = i + 1;
+      document.getElementById(j).style.display='block';
+    }
+    for (i = 0; i < cups; i++)
+    {
+      priceText = '<option> </option>';
+      j = i + 1;
       var cup = "smallCup" + j;
+
+// set current prices
+// for each price, set the text of its option
+    Object.keys(cupPrices).forEach(function(key) {
+      if (key == "small") {
+        priceOpts1 = '<option id="' + cup + '" value="';
+      } else {
+        priceOpts1 = '<option value="';
+      }
+      priceText = priceText + priceOpts1 + cupPrices[key] + priceOpts2 + cupPrices[key] + priceOpts3;
+    });
+    
+    var sz = "";
+   // for (var n = 0; n < 8; n++) {
+   //   m = n + 1;
+      sz = "size" + j;
+      document.getElementById(sz).innerHTML = priceText;
+    // }
+
       var d = new Date();
       if (d.getDay() == 4) {
-          document.getElementById(cup).value = "SPECIAL - Small (12 oz) $4.00 plus tax";
-          document.getElementById(cup).innerHTML = "SPECIAL - Small (12 oz) $4.00 plus tax";
+          document.getElementById(cup).value = spcl;   // "SPECIAL - Small (12 oz) $4.00 plus tax";
+          document.getElementById(cup).innerHTML = spcl;  // "SPECIAL - Small (12 oz) $4.00 plus tax";
       }
-      document.getElementById(j).style.display='block';
+    //  document.getElementById(j).style.display='block';
       // set order number
       var now = Date.now();
       document.getElementById("ORDERNUM").value = now;
@@ -151,6 +182,25 @@ function validateExp(expDate) {
     }
   }
 }
+
+// set current flavors
+
+var txt;
+flavors.forEach(myFunction);
+var e = "flavors";
+var j = 0;
+for (var i = 0; i < 8; i++) {
+    j = i + 1;
+    e = "flavors" + j;
+  document.getElementById(e).innerHTML = txt;
+}
+
+//document.getElementById("demo").innerHTML = txt;
+
+function myFunction(value) {
+  txt = txt + '<option value="' + value + '">' + value + "</option>"; 
+}
+
 
 </script>
 </order_scripts>

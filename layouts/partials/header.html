@@ -4,9 +4,11 @@
 
 <head>
     {{ if (eq .Params.order true) }}
-  <title>{{ if and (not .IsHome) (.Title) }}{{ .Params.Title }} {{ end }}</title>
+       <title>{{ if and (not .IsHome) (.Title) }}{{ .Params.Title }} {{ end }}</title>
+      {{ partial "prices" . }}
+      {{ partial "flavors" . }}
     {{ else }}
-  <title>{{ if and (not .IsHome) (.Title) }}{{ .Params.Title }} - {{ end }}{{ .Site.Title }}</title>
+       <title>{{ if and (not .IsHome) (.Title) }}{{ .Params.Title }} - {{ end }}{{ .Site.Title }}</title>
     {{ end }}
   {{ partial "meta" . }}
   {{ partialCached "header_includes" . -}}
